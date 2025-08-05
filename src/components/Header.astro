@@ -1,16 +1,89 @@
 ---
 import Container from "./Container.astro";
 import Logo from "./Logo.astro";
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath } = Astro.props;
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/use/", label: "Use" },
+  { href: "/build/", label: "Build" },
+  { href: "/discover/", label: "Discover" },
+  { href: "/funding/", label: "Get Funded" },
+];
 ---
 
 <header class="relative z-50 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:pt-4">
   <Container
-    className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-center sm:justify-between lg:flex-nowrap"
+    className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between lg:flex-nowrap"
   >
+    <!-- Logo on the left -->
     <div class="mt-10 lg:mt-0 lg:grow lg:basis-0 xl:mt-10">
       <a href="/" class="inline-block">
         <Logo />
       </a>
     </div>
+
+    <!-- Navigation tabs on the right -->
+    <nav class="hidden md:flex items-center space-x-2 mt-10 lg:mt-0 xl:mt-10">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class={`px-4 py-2 text-lg font-medium transition-all duration-200 rounded-lg ${
+            currentPath === item.href
+              ? "text-white bg-orange-500"
+              : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button
+      class="md:hidden mt-10 lg:mt-0 xl:mt-10 p-2 text-gray-700 hover:text-orange-500"
+      id="mobile-menu-button"
+      aria-label="Toggle navigation menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Mobile menu -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200 py-4"
+    >
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class={`block mx-4 mb-2 px-4 py-3 text-lg font-medium transition-all duration-200 rounded-lg ${
+            currentPath === item.href
+              ? "text-white bg-orange-500"
+              : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
   </Container>
 </header>
+
+<script>
+  // Mobile menu toggle
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  
+  if (button && menu) {
+    button.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>

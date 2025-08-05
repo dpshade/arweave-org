@@ -1,13 +1,12 @@
 ---
-import Container from "../components/Container.astro";
-import CookieBanner from "../components/CookieBanner";
-import Header from "../components/Header.astro";
-
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+// Get current path for navigation highlighting
+const currentPathname = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -18,36 +17,185 @@ const { title } = Astro.props;
       name="description"
       content="Arweave is a global, permissionless hard drive that stores data permanently and incentivizes nodes to keep it. Learn about its unique proof of access mechanism, tokenomic endowment model, and the services and applications that sit on top of it."
     />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F66700" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/svg+xml" href="/favicon-183x183.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Arweave is a global, permissionless hard drive that stores data permanently and incentivizes nodes to keep it." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
-    <Header />
-    <main>
-      <div class="relative pb-20 pt-10 sm:py-10">
-        <div class="absolute inset-x-0 -bottom-14 -top-48 overflow-hidden">
-          <div
-            class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white"
-          >
+    <!-- Header Section -->
+    <header class="site-header" role="banner">
+      <nav class="primary-navigation" role="navigation" aria-label="Primary navigation">
+        <div class="nav-container">
+          <!-- Logo -->
+          <div class="logo-section">
+            <a href="/" class="logo-link">arweave.org</a>
           </div>
-          <div
-            class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white"
-          >
+          
+          <!-- Navigation Items -->
+          <div class="nav-items">
+            <a href="/use/" class={`nav-link ${currentPathname.includes('/use') ? 'nav-link-active' : ''}`}>use</a>
+            <a href="/build/" class={`nav-link ${(currentPathname.includes('/build') || currentPathname === '/') ? 'nav-link-active' : ''}`}>build</a>
+            <a href="/discover/" class={`nav-link ${currentPathname.includes('/discover') ? 'nav-link-active' : ''}`}>discover</a>
+            <a href="/funding/" class={`nav-link ${currentPathname.includes('/funding') ? 'nav-link-active' : ''}`}>get funded</a>
           </div>
         </div>
-        <Container className="relative">
-          <CookieBanner client:load />
-          <slot />
-        </Container>
-      </div>
-    </main>
+      </nav>
+    </header>
+    
+    <slot />
   </body>
 </html>
 
 <style is:global>
-  @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap");
+  /* Brand Variables - Global Definition */
+  :root {
+    /* Primary Brand Colors */
+    --brand-orange: #F66700;
+    --primary-black: #000000;
+    --primary-gray: #A8AFB3;
+    
+    /* Secondary Colors */
+    --light-gray: #666666;
+    --background-white: #FFFFFF;
+    --subtle-gray: #F5F5F5;
+    
+    /* Typography */
+    --font-primary: 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'Roboto Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+    
+    /* Typography Scale - Following Brand Guidelines */
+    --text-body-size: 16px;
+    --text-body-line-height: 175%;
+    --text-body-letter-spacing: 0.04em;
+    
+    --text-headline-large-size: 48px;
+    --text-headline-large-line-height: 56px;
+    --text-headline-large-letter-spacing: 0px;
+    
+    --text-section-header-size: 24px;
+    --text-section-header-line-height: 159%;
+    --text-section-header-letter-spacing: 0.06em;
+    
+    --text-ui-label-size: 16px;
+    --text-ui-label-line-height: 100%;
+    --text-ui-label-letter-spacing: 0.1em;
+    
+    /* Spacing Scale */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    --space-4xl: 80px;
+  }
+  
+  /* Global Typography Classes */
+  .brand-headline-large {
+    font-family: var(--font-primary);
+    font-size: var(--text-headline-large-size);
+    font-weight: 400;
+    line-height: var(--text-headline-large-line-height);
+    letter-spacing: var(--text-headline-large-letter-spacing);
+    color: var(--primary-black);
+  }
+  
+  .brand-body-text {
+    font-family: var(--font-primary);
+    font-size: var(--text-body-size);
+    font-weight: 400;
+    line-height: var(--text-body-line-height);
+    letter-spacing: var(--text-body-letter-spacing);
+    color: var(--primary-black);
+  }
+  
+  .brand-section-header {
+    font-family: var(--font-mono);
+    font-size: var(--text-section-header-size);
+    font-weight: 400;
+    line-height: var(--text-section-header-line-height);
+    letter-spacing: var(--text-section-header-letter-spacing);
+    color: var(--primary-black);
+  }
+  
+  .brand-ui-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-ui-label-size);
+    font-weight: 400;
+    line-height: var(--text-ui-label-line-height);
+    letter-spacing: var(--text-ui-label-letter-spacing);
+    text-align: center;
+    color: var(--primary-gray);
+  }
+  
+  /* Global Button Styles */
+  .brand-button-primary {
+    background: var(--brand-orange);
+    color: var(--background-white);
+    border: none;
+    border-radius: 6px;
+    padding: 12px var(--space-lg);
+    font-family: var(--font-mono);
+    font-size: var(--text-ui-label-size);
+    font-weight: 400;
+    letter-spacing: var(--text-ui-label-letter-spacing);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .brand-button-primary:hover {
+    background: #E55A00;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(246, 103, 0, 0.2);
+  }
+  
+  .brand-button-primary:focus {
+    outline: 2px solid var(--brand-orange);
+    outline-offset: 2px;
+  }
+  
+  /* Global Container Classes */
+  .brand-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  @media (max-width: 767px) {
+    .brand-container {
+      padding: 0 var(--space-md);
+    }
+    
+    .brand-headline-large {
+      font-size: 48px;
+      line-height: 110%;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .brand-container {
+      padding: 0 var(--space-lg);
+    }
+    
+    .brand-headline-large {
+      font-size: 60px;
+    }
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap");
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
@@ -72,5 +220,128 @@ const { title } = Astro.props;
   }
   .btn {
     @apply inline-block rounded-xl bg-gray-900 px-5 py-1 text-center text-white;
+  }
+
+  /* Header Navigation Styles */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .primary-navigation {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+
+  .logo-section {
+    flex-shrink: 0;
+  }
+
+  .logo-link {
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .logo-link:hover {
+    color: #F66700;
+    transform: scale(1.05);
+  }
+
+  .logo-link {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Reduced from 32px to 20px for tighter spacing */
+  }
+
+  .nav-link {
+    font-family: 'Roboto Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #A8AFB3;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+  }
+
+  .nav-link:hover {
+    color: #F66700;
+    transform: translateY(-2px);
+  }
+
+  .nav-link {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link:focus {
+    outline: 2px solid #F66700;
+    outline-offset: 2px;
+  }
+
+  .nav-link-active {
+    color: #F66700 !important;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  @media (max-width: 767px) {
+    .primary-navigation {
+      padding: 0 16px;
+    }
+
+    .nav-container {
+      height: 56px;
+    }
+
+    .nav-items {
+      gap: 16px;
+    }
+
+    .nav-link {
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .primary-navigation {
+      padding: 0 24px;
+    }
+
+    .nav-items {
+      gap: 24px;
+    }
+  }
+
+  /* Accessibility - Reduced motion for navigation */
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link,
+    .logo-link {
+      transition: color 200ms ease-in-out;
+    }
+    
+    .nav-link:hover,
+    .logo-link:hover {
+      transform: none;
+    }
   }
 </style>

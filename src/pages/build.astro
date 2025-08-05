@@ -1,102 +1,513 @@
 ---
-import screenArwiki from "../images/screenshot/build/arwiki.png";
-import screenArwiki2 from "../images/screenshot/build/arwiki2.png";
-import screenCookbook from "../images/screenshot/build/cookbook.webp";
-import screenDiscord from "../images/screenshot/build/discord.png";
-import screenUploadData from "../images/screenshot/build/upload-data2.png";
-import screenArweaveAsDb from "../images/screenshot/build/arweave-as-db.png";
-import screenAo from "../images/screenshot/build/ao.png";
-import screenFullstack from "../images/screenshot/build/fullstack.png";
 import Layout from "../layouts/Layout.astro";
-import Container from "../components/Container.astro";
-import Resource from "../components/Resource.astro";
-import { NavBar } from "../components/NavBar";
-
-const resources = [
-  [
-    {
-      title: "Upload your first data",
-      link: "https://cookbook.arweave.net/concepts/post-transactions.html",
-      screenshot: screenUploadData,
-    },
-    {
-      title: "Build a fully decentralized app",
-      link: "https://arwiki.arweave.net/#/en/creating-a-dapp",
-      screenshot: screenArwiki2,
-    },
-    {
-      title: "Use Arweave as a database",
-      link: "https://cookbook.arweave.net/concepts/queryTransactions.html",
-      screenshot: screenArweaveAsDb,
-    },
-    {
-      title: "Hyper. Parallel. Computer.",
-      link: "https://ao.arweave.net/",
-      screenshot: screenAo,
-    },
-  ],
-  [
-    {
-      title: "Arweave+SmartWeave App Development Workshop",
-      link: "https://www.youtube.com/watch?v=cGLMN5A2C4E",
-      screenshot: screenFullstack,
-    },
-    {
-      title: "Explore the cookbook",
-      link: "https://cookbook.arweave.net",
-      screenshot: screenCookbook,
-    },
-    {
-      title: "Understand the protocol",
-      link: "https://arwiki.arweave.net/#/en/Arweave",
-      screenshot: screenArwiki,
-    },
-    {
-      title: "Join the developer Discord",
-      link: "https://discord.gg/AhsZfBm",
-      screenshot: screenDiscord,
-    },
-  ],
-];
 ---
 
-<Layout title="Build on Arweave">
-  <section id="build" aria-label="Build on Arweave">
-    <Container className="relative z-10 ">
-      <div class="mx-auto lg:mx-0 lg:pr-24">
-        <h2 class="font-display text-4xl tracking-tighter sm:text-5xl">
-          Build on Arweave.
-        </h2>
-        <div class="font-display text-xl tracking-tight">
-          <p class="mt-4">
-            Arweave lets you build quickly and simply with permanent storage.
-            You can store anything from files to fully decentralized web
-            applications.
-          </p>
-          <p class="mt-4">
-            The permaweb ecosystem is a full stack for building decentralized
-            web applications on Arweave. It offers everything from hosting of
-            your web app’s UI, to database querying, and domain name services –
-            all completely decentralized. This lets you build web apps with the
-            properties of blockchains: permanent, provably neutral and
-            transparent.
-          </p>
+<Layout title="Build Arweave - Host your web app">
+  <main class="min-h-screen" role="main">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+      <!-- Simple Header -->
+      <section class="mb-16" aria-labelledby="hero-title">
+        <h1 id="hero-title" class="brand-headline-large text-center mb-12">
+          Host your web app.
+        </h1>
+      </section>
+
+      <!-- True Two-Column Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <!-- Left Column: Simple Steps List -->
+        <div>
+          <ol class="space-y-8">
+            <!-- Step 1 -->
+            <li class="flex items-start">
+              <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium mr-4 flex-shrink-0" style="background-color: var(--brand-orange); color: var(--background-white);">1</span>
+              <div>
+                <h3 class="brand-section-header mb-2">Upload your file.</h3>
+                <p class="brand-body-text" style="color: var(--primary-gray);">
+                  Upload your file for free and access immediately after. Make sure it's under 100kb.
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 2 -->
+            <li class="flex items-start">
+              <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium mr-4 flex-shrink-0" style="background-color: var(--brand-orange); color: var(--background-white);">2</span>
+              <div>
+                <h3 class="brand-section-header mb-2">Upload your code.</h3>
+                <p class="brand-body-text" style="color: var(--primary-gray);">
+                  Upload your application code and dependencies to the Arweave network.
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 3 -->
+            <li class="flex items-start">
+              <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium mr-4 flex-shrink-0" style="background-color: var(--brand-orange); color: var(--background-white);">3</span>
+              <div>
+                <h3 class="brand-section-header mb-2">Configure deployment.</h3>
+                <p class="brand-body-text" style="color: var(--primary-gray);">
+                  Set up your deployment configuration and environment variables.
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 4 -->
+            <li class="flex items-start">
+              <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium mr-4 flex-shrink-0" style="background-color: var(--brand-orange); color: var(--background-white);">4</span>
+              <div>
+                <h3 class="brand-section-header mb-2">Path Manifests.</h3>
+                <p class="brand-body-text" style="color: var(--primary-gray);">
+                  Configure path manifests for proper routing and file organization.
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 5 -->
+            <li class="flex items-start">
+              <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium mr-4 flex-shrink-0" style="background-color: var(--brand-orange); color: var(--background-white);">5</span>
+              <div>
+                <h3 class="brand-section-header mb-2">Build needs static output.</h3>
+                <p class="brand-body-text" style="color: var(--primary-gray);">
+                  Ensure your build process generates static output for optimal performance.
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 6 (MISSING - now added) -->
+            <li class="flex items-start">
+              <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium mr-4 flex-shrink-0" style="background-color: var(--brand-orange); color: var(--background-white);">6</span>
+              <div>
+                <h3 class="brand-section-header mb-2">Build process and deploy.</h3>
+                <p class="brand-body-text" style="color: var(--primary-gray);">
+                  Execute the build process and deploy your application to the permaweb.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Right Column: Single Upload Interface -->
+        <div class="flex justify-center">
+          <div class="w-full max-w-md">
+            <div class="flex gap-2 mb-4">
+              <button class="brand-button-primary px-6 py-2 rounded-lg font-medium transition-colors" aria-pressed="true">Host</button>
+              <button class="brand-ui-label px-6 py-2 text-gray-600 border border-gray-300 rounded-lg font-medium transition-colors hover:bg-gray-50" aria-pressed="false">Files</button>
+            </div>
+            <div class="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center transition-colors hover:border-orange-500 hover:bg-orange-50 upload-zone magical-upload-zone" role="button" tabindex="0" aria-label="Upload file area">
+              <div class="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center" style="background-color: #FEF3F2;">
+                <svg class="w-8 h-8" style="color: #F66700;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                </svg>
+              </div>
+              <h4 class="font-semibold mb-2 text-black upload-title" style="font-family: 'Roboto Mono', monospace; font-size: 16px; letter-spacing: 0.1em;">Drag and Deploy</h4>
+              <p class="text-gray-500 text-sm mb-4 upload-subtitle" style="font-family: 'Roboto Mono', monospace;">folder + files</p>
+              <p class="text-gray-400 text-xs upload-hint" style="font-family: 'Roboto Mono', monospace;">or choose file to upload</p>
+            </div>
+          </div>
         </div>
       </div>
-
-      <h2 class="pt-8 font-display text-3xl tracking-tighter sm:text-3xl">
-        Get Started.
-      </h2>
-      <div class="mx-auto">
-        <Resource resources={resources[0]} />
-      </div>
-      <h2 class="pt-8 font-display text-3xl tracking-tighter sm:text-3xl">
-        Dive Deep.
-      </h2>
-      <div class="mx-auto sm:pb-20">
-        <Resource resources={resources[1]} />
-      </div>
-    </Container>
-  </section>
-  <NavBar currentPathname="/build.html" client:load />
+    </div>
+  </main>
 </Layout>
+
+<style>
+  /* Typography already loaded in Layout.astro - remove duplicate import */
+  
+  /* Brand variables imported from global layout */
+
+  /* Typography following brand guidelines */
+  .build-page {
+    font-family: var(--font-primary);
+  }
+
+  /* Enhanced focus styles for accessibility */
+  .upload-zone:focus {
+    outline: 2px solid var(--brand-orange);
+    outline-offset: 2px;
+    /* Fallback for older browsers */
+    box-shadow: 0 0 0 2px var(--brand-orange);
+  }
+
+  /* Magical Upload Zone Enhancements */
+  .magical-upload-zone {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .magical-upload-zone::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(246, 103, 0, 0.1), transparent);
+    transform: rotate(45deg) translateX(-100%);
+    transition: all 0.6s ease;
+    opacity: 0;
+  }
+
+  .magical-upload-zone:hover::before {
+    transform: rotate(45deg) translateX(100%);
+    opacity: 1;
+  }
+
+  /* Hover states for interactive elements */
+  .upload-zone:hover {
+    border-color: var(--brand-orange) !important;
+    background-color: var(--orange-light) !important;
+    transform: scale(1.02);
+  }
+
+  /* Upload zone animations */
+  .upload-zone {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .upload-zone.drag-over {
+    animation: uploadPulse 1s ease-in-out infinite;
+  }
+
+  @keyframes uploadPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  /* Success state animations */
+  .upload-zone.success {
+    animation: celebrateUpload 0.6s ease-out;
+  }
+
+  @keyframes celebrateUpload {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1) rotate(2deg);
+    }
+    50% {
+      transform: scale(1.05) rotate(-1deg);
+    }
+    75% {
+      transform: scale(1.02) rotate(0.5deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  /* Step navigation hover states removed - using static content */
+
+  /* Button hover states */
+  button:hover,
+  a[role="button"]:hover {
+    -webkit-transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
+    transform: translateY(-1px);
+    -webkit-box-shadow: 0 4px 12px rgba(246, 103, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(246, 103, 0, 0.15);
+  }
+
+  /* Card hover enhancements */
+  .bg-white:hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+  }
+
+  /* Responsive typography adjustments */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.25rem !important; /* 36px */
+    }
+    
+    h2 {
+      font-size: 1.875rem !important; /* 30px */
+    }
+    
+    /* Step navigation responsive styles removed - using static layout */
+    
+    .upload-zone {
+      padding: 2rem !important;
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    .upload-zone,
+    button,
+    a[role="button"] {
+      display: none;
+    }
+  }
+
+  /* Reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .upload-zone {
+      border-width: 3px;
+    }
+    
+    button,
+    a[role="button"] {
+      border: 2px solid var(--primary-black);
+    }
+  }
+  
+  /* Notification animations */
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideInBounce {
+    0% {
+      transform: translateX(100%) scale(0.8);
+      opacity: 0;
+    }
+    60% {
+      transform: translateX(-10px) scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes confettiFall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(200px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  // Enhanced drag and drop functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const uploadZone = document.querySelector('.upload-zone');
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.style.display = 'none';
+    fileInput.accept = '*';
+    document.body.appendChild(fileInput);
+
+    // Drag and drop event handlers
+    uploadZone?.addEventListener('dragover', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      uploadZone.classList.add('drag-over');
+      (uploadZone as HTMLElement).style.borderColor = '#F66700';
+      (uploadZone as HTMLElement).style.backgroundColor = '#FEF3F2';
+    });
+
+    uploadZone?.addEventListener('dragleave', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!uploadZone.contains((e as FocusEvent).relatedTarget as Node)) {
+        uploadZone.classList.remove('drag-over');
+        (uploadZone as HTMLElement).style.borderColor = '#D1D5DB';
+        (uploadZone as HTMLElement).style.backgroundColor = 'transparent';
+      }
+    });
+
+    uploadZone?.addEventListener('drop', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      uploadZone.classList.remove('drag-over');
+      (uploadZone as HTMLElement).style.borderColor = '#D1D5DB';
+      (uploadZone as HTMLElement).style.backgroundColor = 'transparent';
+      
+      const files = (e as DragEvent).dataTransfer?.files;
+      if (files && files.length > 0) {
+        handleFileUpload(files[0]);
+      }
+    });
+
+    // Click to upload functionality
+    uploadZone?.addEventListener('click', function() {
+      fileInput.click();
+    });
+
+    // Keyboard accessibility for upload zone
+    uploadZone?.addEventListener('keydown', function(e) {
+      if ((e as KeyboardEvent).key === 'Enter' || (e as KeyboardEvent).key === ' ') {
+        e.preventDefault();
+        fileInput.click();
+      }
+    });
+
+    fileInput.addEventListener('change', function(e) {
+      const files = (e.target as HTMLInputElement).files;
+      if (files && files.length > 0) {
+        handleFileUpload(files[0]);
+      }
+    });
+
+    // Enhanced file upload handler with delightful feedback
+    function handleFileUpload(file: File) {
+      // Validate file type
+      const allowedTypes = ['text/html', 'text/css', 'text/javascript', 'application/javascript', 'text/plain', 'application/json'];
+      if (!allowedTypes.some(type => file.type.startsWith(type))) {
+        showNotification('Oops! Please upload a valid web file (HTML, CSS, JS, JSON, etc.) 📁', 'error');
+        return;
+      }
+      
+      // Check file size (under 100kb as specified)
+      const maxSize = 100 * 1024; // 100KB
+      if (file.size > maxSize) {
+        showNotification('File is too large! Please choose something under 100KB 📏', 'error');
+        return;
+      }
+
+      // Add celebration animation
+      uploadZone?.classList.add('success');
+      setTimeout(() => uploadZone?.classList.remove('success'), 600);
+
+      // Update UI to show file selected with personality
+      const uploadIcon = uploadZone?.querySelector('svg');
+      const uploadTitle = uploadZone?.querySelector('.upload-title');
+      const uploadSubtext = uploadZone?.querySelector('.upload-subtitle');
+      const uploadHint = uploadZone?.querySelector('.upload-hint');
+
+      if (uploadTitle) uploadTitle.textContent = 'Perfect! File Ready 🚀';
+      if (uploadSubtext) uploadSubtext.textContent = file.name;
+      if (uploadHint) uploadHint.textContent = `${(file.size / 1024).toFixed(1)}KB of permanence`;
+      
+      // Change icon color to indicate success
+      if (uploadIcon) {
+        uploadIcon.style.color = '#10B981'; // Green color for success
+      }
+
+      // Show success state
+      (uploadZone as HTMLElement).style.borderColor = '#10B981';
+      (uploadZone as HTMLElement).style.backgroundColor = '#F0FDF4';
+
+      // Create confetti effect for first upload
+      createConfetti();
+
+      showNotification(`🎉 Successfully selected: ${file.name}`, 'success');
+      console.log('File uploaded:', file.name, 'Size:', file.size, 'bytes');
+    }
+
+    // Delightful confetti effect
+    function createConfetti() {
+      for (let i = 0; i < 20; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.cssText = `
+          position: fixed;
+          top: ${uploadZone?.offsetTop || 200}px;
+          left: ${(uploadZone?.offsetLeft || 400) + Math.random() * (uploadZone?.offsetWidth || 300)}px;
+          width: 6px;
+          height: 6px;
+          background: ${['#F66700', '#10B981', '#3B82F6', '#F59E0B'][Math.floor(Math.random() * 4)]};
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 1000;
+          animation: confettiFall ${0.8 + Math.random() * 0.4}s ease-out forwards;
+        `;
+        document.body.appendChild(confetti);
+        
+        setTimeout(() => confetti.remove(), 1200);
+      }
+    }
+    
+    // Enhanced notification system with personality
+    function showNotification(message: string, type: 'success' | 'error' | 'info' = 'info') {
+      const notification = document.createElement('div');
+      notification.className = `notification notification-${type}`;
+      notification.innerHTML = message; // Changed to innerHTML to support emojis
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 16px 20px;
+        border-radius: 12px;
+        color: white;
+        font-family: var(--font-primary);
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 1000;
+        animation: slideInBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        background-color: ${type === 'success' ? '#10B981' : type === 'error' ? '#EF4444' : '#3B82F6'};
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      `;
+      
+      // Click to dismiss
+      notification.addEventListener('click', () => {
+        notification.style.animation = 'slideOut 0.3s ease-in';
+        setTimeout(() => notification.remove(), 300);
+      });
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        if (notification.parentNode) {
+          notification.style.animation = 'slideOut 0.3s ease-in';
+          setTimeout(() => notification.remove(), 300);
+        }
+      }, 4000);
+    }
+
+    // Tab navigation functionality
+    const hostButton = document.querySelector('button[aria-pressed="true"]');
+    const filesButton = document.querySelector('button[aria-pressed="false"]');
+
+    hostButton?.addEventListener('click', function() {
+      hostButton.setAttribute('aria-pressed', 'true');
+      filesButton?.setAttribute('aria-pressed', 'false');
+      (hostButton as HTMLElement).style.backgroundColor = '#F66700';
+      (hostButton as HTMLElement).style.color = '#FFFFFF';
+      if (filesButton) {
+        (filesButton as HTMLElement).style.backgroundColor = 'transparent';
+        (filesButton as HTMLElement).style.color = '#6B7280';
+      }
+    });
+
+    filesButton?.addEventListener('click', function() {
+      filesButton.setAttribute('aria-pressed', 'true');
+      hostButton?.setAttribute('aria-pressed', 'false');
+      (filesButton as HTMLElement).style.backgroundColor = '#F66700';
+      (filesButton as HTMLElement).style.color = '#FFFFFF';
+      if (hostButton) {
+        (hostButton as HTMLElement).style.backgroundColor = 'transparent';
+        (hostButton as HTMLElement).style.color = '#6B7280';
+      }
+    });
+
+    // Step navigation functionality removed - now using static content display
+  });
+</script>

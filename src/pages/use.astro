@@ -1,100 +1,763 @@
 ---
-import screenPermapages from "../images/screenshot/use/permapages.png";
-import screenPioneers from "../images/screenshot/use/pioneers.png";
-import screenPermacast from "../images/screenshot/use/permacast.png";
-import screenPermawebJournal from "../images/screenshot/use/permawebjournal.png";
-import screenList from "../images/screenshot/use/arweavelists.png";
-import screenWeekly from "../images/screenshot/use/arweaveweekly.png";
-import screenArwiki from "../images/screenshot/use/arwiki.png";
-import screenArio from "../images/screenshot/use/ario.png";
-import Container from "../components/Container.astro";
-import Resource from "../components/Resource.astro";
-import TrustedBy from "../components/TrustedBy.astro";
 import Layout from "../layouts/Layout.astro";
-import { NavBar } from "../components/NavBar";
-
-const resources = [
-  // Use Arweave
-  [
-    {
-      title: "Unleash the power of the permanent web.",
-      link: "https://ar.io",
-      screenshot: screenArio,
-    },
-    {
-      title: "Make your homepage on the permaweb",
-      link: "https://permapages.app/",
-      screenshot: screenPermapages,
-    },
-    {
-      title: "Arweave Weekly News",
-      link: "https://arweavehub.com/weekly",
-      screenshot: screenWeekly,
-    },
-    {
-      title: "Explore the wiki",
-      link: "https://arwiki.wiki/",
-      screenshot: screenArwiki,
-    },
-  ],
-  // Learn More
-  [
-    {
-      title: "Onchain publication and knowledge hub",
-      link: "https://permaweb-journal.arweave.net/",
-      screenshot: screenPermawebJournal,
-    },
-    {
-      title: "Podcast: Permaweb Pioneers",
-      link: "https://permaweb-pioneers.simplecast.com/",
-      screenshot: screenPioneers,
-    },
-    {
-      title: "Podcast: Permacast",
-      link: "https://www.permacast.app/",
-      screenshot: screenPermacast,
-    },
-    {
-      title: "Explore the ecosystem",
-      link: "https://list.weavescan.com/",
-      screenshot: screenList,
-    },
-  ],
-];
 ---
 
-<Layout title="Use Arweave">
-  <section id="use" aria-label="Use Arweave">
-    <Container className="relative z-10">
-      <div class="mx-auto lg:mx-0 lg:pr-24">
-        <h2 class="font-display text-4xl tracking-tighter sm:text-5xl">
-          Use Arweave.
-        </h2>
-        <div class="mt-4 font-display text-xl tracking-tight">
-          <p class="mt-4">
-            Arweave is being used in countless different ways. Take your first
-            steps with the power of permanent data storage by uploading a file,
-            making your own homepage on the permaweb or simply learning more
-            about Arweave and its ecosystem.
+<Layout title="Use Arweave - Store data permanently">
+  <main class="use-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="brand-container">
+        <div class="hero-content">
+          <h1 class="hero-headline">Use Arweave.</h1>
+          <h2 class="hero-tagline floating-text">Store data permanently.</h2>
+          <p class="hero-description">
+            Whether it's a personal photo or humanity's most important data, 
+            your content lives forever in a truly decentralized and provably neutral web. 
+            Upload once, access anywhere, anytime.
           </p>
         </div>
       </div>
+    </section>
 
-      <h2 class="pt-8 font-display text-3xl tracking-tighter sm:text-3xl">
-        Get Started.
-      </h2>
-      <div class="mx-auto">
-        <Resource resources={resources[0]} />
-      </div>
-      <h2 class="pt-5 font-display text-3xl tracking-tighter sm:text-3xl">
-        Dive Deep.
-      </h2>
-      <div class="mx-auto">
-        <Resource resources={resources[1]} />
-      </div>
-    </Container>
-  </section>
-  <TrustedBy />
+    <!-- Tutorial Section -->
+    <section class="tutorial-section">
+      <div class="brand-container">
+        <h3 class="section-header">Upload Tutorial</h3>
+        
+        <!-- Step Navigation -->
+        <div class="step-navigation">
+          <div class="step step-active">
+            <span class="step-indicator">1</span>
+            <span class="step-label">Upload your file.</span>
+          </div>
+          <div class="step">
+            <span class="step-indicator">2</span>
+            <span class="step-label">Access your file.</span>
+          </div>
+        </div>
 
-  <NavBar currentPathname="/use.html" client:load />
+        <!-- Step Content -->
+        <div class="step-content">
+          <div class="step-instructions">
+            <h4 class="step-title">Step 1: Upload your file.</h4>
+            <p class="step-description">
+              You can upload your file for free and access it immediately after. 
+            Make sure it's under 100kb. Once uploaded, it's permanent - no takebacks, 
+            no expiration dates!
+            </p>
+          </div>
+          
+          <!-- Upload Zone -->
+          <div class="upload-zone-container">
+            <div class="upload-zone" id="upload-zone">
+              <div class="upload-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7,10 12,5 17,10"></polyline>
+                  <line x1="12" y1="5" x2="12" y2="15"></line>
+                </svg>
+              </div>
+              <h4 class="upload-title">Drag and Drop</h4>
+              <p class="upload-subtitle">folder + files</p>
+              <p class="upload-hint">or choose file to make it permanent</p>
+              <input type="file" class="upload-input" id="file-input" multiple>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Layer Section -->
+    <section class="data-layer-section">
+      <div class="brand-container">
+        <div class="data-layer-content">
+          <h1 class="data-layer-headline pulse-text">Arweave is the world's data layer.</h1>
+          <p class="data-layer-description">
+            Unlike traditional blockchains built for transactions, Arweave's novel blockweave 
+            protocol was designed from the ground up as the web's permanent data layer. 
+            With a single upfront fee, you can store data indefinitely that is tamper-proof, 
+            censorship-resistant, and always accessible. Ready to dive in? Here's how:
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="brand-container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-image">
+              <div class="feature-placeholder"></div>
+            </div>
+            <h4 class="feature-title">Read About Arweave</h4>
+            <p class="feature-description">Dive deep into the culture and ideas that make Arweave special</p>
+            <a href="#" class="feature-link magical-link">Read Permaweb Journal →</a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-image">
+              <div class="feature-placeholder"></div>
+            </div>
+            <h4 class="feature-title">Permanent Cloud Storage</h4>
+            <p class="feature-description">Pay once, store forever. Your files become part of history.</p>
+            <a href="#" class="feature-link magical-link">Store on ArDrive →</a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-image">
+              <div class="feature-placeholder"></div>
+            </div>
+            <h4 class="feature-title">Get Wallet</h4>
+            <p class="feature-description">Choose an ArConnect wallet that fits your style and keeps your data secure.</p>
+            <a href="#" class="feature-link magical-link">Choose Your Wallet →</a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-image">
+              <div class="feature-placeholder"></div>
+            </div>
+            <h4 class="feature-title">Smart Contracts</h4>
+            <p class="feature-description">Create and deploy contracts that leverage permanent storage superpowers.</p>
+            <a href="#" class="feature-link magical-link">Develop on AO →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  /* Brand variables imported from global layout */
+
+  /* Typography */
+  .use-page {
+    font-family: var(--font-primary);
+  }
+
+  /* Container uses global brand-container class */
+
+  /* Hero Section */
+  .hero-section {
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .hero-headline {
+    font-family: var(--font-mono);
+    font-size: var(--text-headline-large-size);
+    font-weight: 400;
+    line-height: var(--text-headline-large-line-height);
+    letter-spacing: var(--text-headline-large-letter-spacing);
+    color: var(--primary-black);
+    margin-bottom: 1rem;
+  }
+
+  .hero-tagline {
+    font-family: var(--font-primary);
+    font-size: var(--text-section-header-size);
+    font-weight: 400;
+    line-height: var(--text-section-header-line-height);
+    letter-spacing: var(--text-section-header-letter-spacing);
+    color: var(--primary-black);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-description {
+    font-family: var(--font-primary);
+    font-size: var(--text-body-size);
+    font-weight: 400;
+    line-height: var(--text-body-line-height);
+    letter-spacing: var(--text-body-letter-spacing);
+    color: var(--primary-gray);
+    max-width: 48rem;
+  }
+
+  /* Tutorial Section */
+  .tutorial-section {
+    padding: 4rem 0;
+  }
+
+  .section-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-black);
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  /* Step Navigation */
+  .step-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .step-indicator {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    background-color: var(--light-gray);
+    color: var(--supporting-gray);
+  }
+
+  .step-label {
+    font-weight: 500;
+    color: var(--supporting-gray);
+  }
+
+  .step-active .step-indicator {
+    background-color: var(--brand-orange);
+    color: var(--white);
+  }
+
+  .step-active .step-label {
+    color: var(--brand-orange);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* Step Content */
+  .step-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .step-title {
+    font-family: var(--font-mono);
+    font-size: var(--text-section-header-size);
+    font-weight: 400;
+    line-height: var(--text-section-header-line-height);
+    letter-spacing: var(--text-section-header-letter-spacing);
+    color: var(--primary-black);
+    margin-bottom: 1.5rem;
+  }
+
+  .step-description {
+    font-family: var(--font-primary);
+    font-size: var(--text-body-size);
+    font-weight: 400;
+    line-height: var(--text-body-line-height);
+    letter-spacing: var(--text-body-letter-spacing);
+    color: var(--primary-gray);
+  }
+
+  /* Upload Zone */
+  .upload-zone-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .upload-zone {
+    position: relative;
+    width: 100%;
+    max-width: 28rem;
+    border: 2px dashed var(--light-gray);
+    border-radius: 0.5rem;
+    padding: 3rem;
+    text-align: center;
+    background-color: var(--white);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .upload-zone:hover {
+    border-color: var(--brand-orange);
+    background-color: #FFF7ED;
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(246, 103, 0, 0.1);
+  }
+
+  .upload-zone.drag-over {
+    border-color: var(--brand-orange);
+    background-color: #FFF7ED;
+  }
+
+  .upload-icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1rem;
+    background-color: #FED7AA;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-orange);
+  }
+
+  .upload-title {
+    font-weight: 600;
+    color: var(--primary-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .upload-subtitle {
+    font-size: 0.875rem;
+    color: var(--primary-gray);
+    margin-bottom: 1rem;
+  }
+
+  .upload-hint {
+    font-size: 0.75rem;
+    color: var(--light-gray);
+  }
+
+  .upload-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Data Layer Section */
+  .data-layer-section {
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .data-layer-content {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+
+  .data-layer-headline {
+    font-family: var(--font-primary);
+    font-size: var(--text-headline-large-size);
+    font-weight: 400;
+    line-height: var(--text-headline-large-line-height);
+    letter-spacing: var(--text-headline-large-letter-spacing);
+    color: var(--primary-black);
+    margin-bottom: 1.5rem;
+  }
+
+  .data-layer-description {
+    font-family: var(--font-primary);
+    font-size: var(--text-body-size);
+    font-weight: 400;
+    line-height: var(--text-body-line-height);
+    letter-spacing: var(--text-body-letter-spacing);
+    color: var(--primary-gray);
+  }
+
+  /* Features Section */
+  .features-section {
+    padding: 4rem 0;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  .feature-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .feature-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .feature-image {
+    margin-bottom: 1rem;
+  }
+
+  .feature-placeholder {
+    width: 100%;
+    height: 8rem;
+    background-color: var(--very-light-gray);
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feature-title {
+    font-weight: 600;
+    color: var(--primary-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-description {
+    font-size: 0.875rem;
+    color: var(--primary-gray);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .feature-link {
+    font-size: 0.875rem;
+    color: var(--brand-orange);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .feature-link:hover {
+    text-decoration: underline;
+    transform: translateX(4px);
+  }
+
+  .feature-link {
+    transition: all 0.2s ease;
+  }
+
+  /* Magical link enhancement */
+  .magical-link {
+    position: relative;
+  }
+
+  .magical-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brand-orange);
+    transition: width 0.3s ease;
+  }
+
+  .magical-link:hover::after {
+    width: 100%;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 767px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .hero-section,
+    .tutorial-section,
+    .data-layer-section,
+    .features-section {
+      padding: 2rem 0;
+    }
+
+    .hero-headline {
+      font-size: 2rem;
+    }
+
+    .hero-tagline,
+    .data-layer-headline {
+      font-size: 1.5rem;
+    }
+
+    .step-navigation {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .step-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+      padding: 0 1.5rem;
+      max-width: 48rem;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding: 0 2rem;
+      max-width: 72rem;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 80rem;
+    }
+  }
+
+  /* Delightful animations */
+  .floating-text {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .pulse-text {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  /* Upload zone enhancements */
+  .upload-zone {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .upload-zone.drag-over {
+    animation: dragPulse 0.8s ease-in-out infinite;
+  }
+
+  @keyframes dragPulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(246, 103, 0, 0.5);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(246, 103, 0, 0.3);
+    }
+  }
+
+  /* Accessibility - Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .floating-text,
+    .pulse-text {
+      animation: none;
+    }
+    
+    .upload-zone:hover {
+      transform: none;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-2px);
+    }
+    
+    .feature-link:hover {
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  // File upload functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const uploadZone = document.getElementById('upload-zone') as HTMLElement;
+    const fileInput = document.getElementById('file-input') as HTMLInputElement;
+
+    if (uploadZone && fileInput) {
+      // Handle drag and drop
+      uploadZone.addEventListener('dragover', function(e: DragEvent) {
+        e.preventDefault();
+        uploadZone.classList.add('drag-over');
+      });
+
+      uploadZone.addEventListener('dragleave', function(e: DragEvent) {
+        e.preventDefault();
+        uploadZone.classList.remove('drag-over');
+      });
+
+      uploadZone.addEventListener('drop', function(e: DragEvent) {
+        e.preventDefault();
+        uploadZone.classList.remove('drag-over');
+        if (e.dataTransfer) {
+          const files = e.dataTransfer.files;
+          handleFiles(files);
+        }
+      });
+
+      // Handle click to upload
+      uploadZone.addEventListener('click', function() {
+        fileInput.click();
+      });
+
+      fileInput.addEventListener('change', function() {
+        if (fileInput.files) {
+          handleFiles(fileInput.files);
+        }
+      });
+
+      function handleFiles(files: FileList) {
+        if (files.length > 0) {
+          console.log('Files selected:', files);
+          
+          // Add delightful feedback for file selection
+          const uploadIcon = uploadZone?.querySelector('svg');
+          const uploadTitle = uploadZone?.querySelector('.upload-title');
+          const uploadSubtitle = uploadZone?.querySelector('.upload-subtitle');
+          const uploadHint = uploadZone?.querySelector('.upload-hint');
+          
+          // Celebrate the upload
+          uploadZone?.classList.add('success-state');
+          
+          if (uploadTitle) uploadTitle.textContent = 'Files Ready for Permanence! 🚀';
+          if (uploadSubtitle) uploadSubtitle.textContent = `${files.length} file${files.length > 1 ? 's' : ''} selected`;
+          if (uploadHint) uploadHint.textContent = 'Your data journey begins now';
+          
+          if (uploadIcon) {
+            uploadIcon.style.color = '#10B981';
+          }
+          
+          // Create mini celebration
+          createMiniCelebration();
+          
+          // Show friendly notification
+          showUploadNotification(`🎉 ${files.length} file${files.length > 1 ? 's' : ''} ready for permanent storage!`);
+          
+          // Here you would implement the actual file upload logic
+          for (let i = 0; i < files.length; i++) {
+            console.log(`File ${i + 1}: ${files[i].name}, Size: ${files[i].size} bytes`);
+          }
+        }
+      }
+      
+      // Mini celebration function
+      function createMiniCelebration() {
+        for (let i = 0; i < 8; i++) {
+          const spark = document.createElement('div');
+          spark.style.cssText = `
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background: #F66700;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkFly ${0.6 + Math.random() * 0.4}s ease-out forwards;
+            z-index: 10;
+          `;
+          spark.style.transform = `translate(-50%, -50%) rotate(${i * 45}deg) translateX(30px)`;
+          uploadZone?.appendChild(spark);
+          
+          setTimeout(() => spark.remove(), 1000);
+        }
+      }
+      
+      // Upload notification function
+      function showUploadNotification(message: string) {
+        const notification = document.createElement('div');
+        notification.textContent = message;
+        notification.style.cssText = `
+          position: fixed;
+          top: 80px;
+          right: 20px;
+          background: #10B981;
+          color: white;
+          padding: 16px 20px;
+          border-radius: 12px;
+          font-family: var(--font-primary);
+          font-size: 14px;
+          font-weight: 500;
+          z-index: 1000;
+          animation: slideInRight 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.style.animation = 'slideOutRight 0.3s ease-in';
+          setTimeout(() => notification.remove(), 300);
+        }, 3000);
+      }
+    }
+    
+    // Add success state styling
+    const style = document.createElement('style');
+    style.textContent = `
+      .upload-zone.success-state {
+        border-color: #10B981 !important;
+        background-color: #F0FDF4 !important;
+        animation: successPulse 0.6s ease-out;
+      }
+      
+      @keyframes successPulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+      
+      @keyframes sparkFly {
+        0% {
+          transform: translate(-50%, -50%) rotate(var(--angle)) translateX(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(var(--angle)) translateX(60px);
+          opacity: 0;
+        }
+      }
+      
+      @keyframes slideInRight {
+        0% {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes slideOutRight {
+        0% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  });
+</script>

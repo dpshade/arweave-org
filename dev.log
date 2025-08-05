@@ -1,0 +1,29 @@
+$ astro dev
+17:02:56 [types] Generated 0ms
+17:02:56 [content] Syncing content
+17:02:56 [content] Synced content
+17:02:56 [vite] Port 8547 is in use, trying another one...
+
+ astro  v5.12.3 ready in 230 ms
+
+┃ Local    http://localhost:8548/
+┃ Network  use --host to expose
+
+17:02:56 watching for file changes...
+17:03:24 [WARN] [vite] [vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+140|    }
+141|  
+142|    @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap");
+   |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+143|    @tailwind base;
+144|    @tailwind components;
+17:03:24 [200] /build/ 91ms
+17:21:39 [watch] src/pages/build.astro
+17:21:39 [WARN] [vite] [vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+140|    }
+141|  
+142|    @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap");
+   |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+143|    @tailwind base;
+144|    @tailwind components;
+17:21:39 [200] /build/ 76ms

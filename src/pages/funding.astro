@@ -1,88 +1,552 @@
 ---
-import logoCommunitylabs from "../images/logos/communitylabs.svg";
-import logoDha from "../images/logos/dha.png";
-import logoForward from "../images/logos/forward.png";
-import logoHansa from "../images/logos/hansa.svg";
-import logoPermadao from "../images/logos/permadao.png";
-import logoPermaventures from "../images/logos/permaventures.png";
-import logoLongview from "../images/logos/longview.png";
-import logoArweaveasia from "../images/logos/arweaveasia.png";
 import Layout from "../layouts/Layout.astro";
-import Container from "../components/Container.astro";
-import ResourceList from "../components/ResourceList.astro";
-import { NavBar } from "../components/NavBar";
-
-const resources = [
-  {
-    title: "Permanent Ventures",
-    link: "https://twitter.com/permanentvc",
-    logo: logoPermaventures,
-  },
-  {
-    title: "PermaDAO",
-    link: "https://permadao.notion.site/",
-    logo: logoPermadao,
-  },
-  {
-    title: "Longview Labs",
-    link: "https://www.longviewlabs.co/",
-    logo: logoLongview,
-  },
-  {
-    title: "Digital History Association",
-    link: "https://dha.arweave.dev/",
-    logo: logoDha,
-  },
-  {
-    title: "Arweave Asia Fund",
-    link: "https://arscp.ventures/",
-    logo: logoArweaveasia,
-  },
-  {
-    title: "Community Labs",
-    link: "https://communitylabs.com/",
-    logo: logoCommunitylabs,
-  },
-  {
-    title: "Forward Research",
-    link: "https://fwd.arweave.dev/",
-    logo: logoForward,
-  },
-  {
-    title: "Hansa",
-    link: "https://www.hansa.network/",
-    logo: logoHansa,
-  },
-].sort((a, b) => a.title.localeCompare(b.title));
 ---
 
-<Layout title="Arweave: Get Funded">
-  <section id="fund" aria-label="Get Funded">
-    <Container className="relative z-10 ">
-      <div class="mx-auto lg:mx-0 lg:pr-24">
-        <h2 class="font-display text-4xl tracking-tighter sm:text-5xl">
-          Get Funded.
-        </h2>
-        <div class="font-display text-xl tracking-tight">
-          <p class="mt-4">
-            Arweave is a fully decentralized ecosystem. There are numerous
-            dedicated organizations – ranging from non-profits, to DAOs and
-            venture studios – that back its development and help the ecosystem
-            grow. Many of these organizations have grant and investment
-            opportunities available for those contributing to the Arweave
-            ecosystem.
-          </p>
-          <p class="mt-4">
-            Thinking of building a project on Arweave? Start building, reach
-            out, get funded!
-          </p>
+<Layout title="Get Funded - Arweave">
+  <main class="funding-page">
+    <div class="brand-container">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-main-title">Arweave Projects</h1>
+          <h2 class="hero-subtitle-heading">Find projects.</h2>
+          <p class="hero-subtitle">Apps & Infrastructure built on the foundation of permanent data.</p>
         </div>
-      </div>
+      </section>
 
-      <div class="mx-auto mt-20 ms:mb-20">
-        <ResourceList resources={resources} />
-      </div>
-    </Container>
-  </section>
-  <NavBar currentPathname="/funding.html" client:load />
+      <!-- Projects Section -->
+      <section class="projects-section">
+        <div class="projects-grid">
+          <!-- Arweave Research Projects -->
+          <article class="project-card">
+            <div class="project-category">Arweave Research</div>
+            <h3 class="project-title">Consensus Mechanism Research</h3>
+            <p class="project-description">Research into optimizing the SPoRA consensus mechanism for improved network efficiency and reduced computational requirements. Shape the future of decentralized consensus.</p>
+            <div class="project-footer">
+              <a href="#" class="btn-apply magical-apply-btn">Apply</a>
+              <span class="project-meta">$50K - $100K</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-category">Arweave Research</div>
+            <h3 class="project-title">Data Storage Optimization</h3>
+            <p class="project-description">Developing breakthrough compression algorithms and storage strategies to revolutionize permanent data storage efficiency on the Arweave network.</p>
+            <div class="project-footer">
+              <a href="#" class="btn-apply magical-apply-btn">Apply</a>
+              <span class="project-meta">$30K - $75K</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-category">Arweave Research</div>
+            <h3 class="project-title">Network Scalability Study</h3>
+            <p class="project-description">Pioneering research to scale the Arweave network for global adoption while preserving its decentralized nature. Be part of the next generation of web infrastructure.</p>
+            <div class="project-footer">
+              <a href="#" class="btn-apply magical-apply-btn">Apply</a>
+              <span class="project-meta">$75K - $150K</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-category">Arweave Research</div>
+            <h3 class="project-title">Developer Tooling Enhancement</h3>
+            <p class="project-description">Building intuitive SDKs, APIs, and developer tools that make permanent storage integration feel magical for application developers worldwide.</p>
+            <div class="project-footer">
+              <a href="#" class="btn-apply magical-apply-btn">Apply</a>
+              <span class="project-meta">$40K - $80K</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-category">Arweave Research</div>
+            <h3 class="project-title">Cross-Chain Integration</h3>
+            <p class="project-description">Research and development of elegant bridges connecting Arweave with other blockchain ecosystems. Build the infrastructure that unites Web3.</p>
+            <div class="project-footer">
+              <a href="#" class="btn-apply magical-apply-btn">Apply</a>
+              <span class="project-meta">$60K - $120K</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-category">Arweave Research</div>
+            <h3 class="project-title">Privacy & Security Research</h3>
+            <p class="project-description">Cutting-edge cryptographic research to enhance privacy and security for permanent data storage. Protect the future of digital freedom.</p>
+            <div class="project-footer">
+              <a href="#" class="btn-apply magical-apply-btn">Apply</a>
+              <span class="project-meta">$80K - $160K</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
 </Layout>
+
+<script>
+  // Add delightful interactions to funding page
+  document.addEventListener('DOMContentLoaded', function() {
+    const applyButtons = document.querySelectorAll('.magical-apply-btn');
+    
+    applyButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const card = button.closest('.project-card');
+        const projectTitle = card?.querySelector('.project-title')?.textContent || 'this project';
+        
+        // Check if already applied
+        if (card?.classList.contains('applied')) {
+          showApplicationMessage('You\'ve already applied to this project! 🚀', 'info');
+          return;
+        }
+        
+        // Add applied state
+        card?.classList.add('applied');
+        button.textContent = 'Applied! ✓';
+        
+        // Create celebration effect
+        createApplicationCelebration(button);
+        
+        // Show success message
+        showApplicationMessage(`Application submitted for ${projectTitle}! 🎉`, 'success');
+        
+        // Store application in localStorage (for demo purposes)
+        const applications = JSON.parse(localStorage.getItem('arweave-applications') || '[]');
+        applications.push({
+          project: projectTitle,
+          timestamp: new Date().toISOString()
+        });
+        localStorage.setItem('arweave-applications', JSON.stringify(applications));
+      });
+    });
+    
+    // Check for existing applications on page load
+    const savedApplications = JSON.parse(localStorage.getItem('arweave-applications') || '[]');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+      const projectTitle = card.querySelector('.project-title')?.textContent;
+      const button = card.querySelector('.magical-apply-btn');
+      
+      if (savedApplications.some(app => app.project === projectTitle)) {
+        card.classList.add('applied');
+        if (button) button.textContent = 'Applied! ✓';
+      }
+    });
+    
+    // Application celebration function
+    function createApplicationCelebration(button: Element) {
+      const rect = button.getBoundingClientRect();
+      
+      for (let i = 0; i < 15; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.cssText = `
+          position: fixed;
+          top: ${rect.top + rect.height / 2}px;
+          left: ${rect.left + rect.width / 2}px;
+          width: 6px;
+          height: 6px;
+          background: ${['#F66700', '#10B981', '#3B82F6', '#F59E0B', '#EF4444'][Math.floor(Math.random() * 5)]};
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 1000;
+          animation: confettiExplode ${0.8 + Math.random() * 0.4}s ease-out forwards;
+        `;
+        
+        const angle = (Math.PI * 2 * i) / 15;
+        const velocity = 50 + Math.random() * 30;
+        confetti.style.setProperty('--angle', `${angle}rad`);
+        confetti.style.setProperty('--velocity', `${velocity}px`);
+        
+        document.body.appendChild(confetti);
+        
+        setTimeout(() => confetti.remove(), 1200);
+      }
+    }
+    
+    // Application message function
+    function showApplicationMessage(message: string, type: 'success' | 'info') {
+      const messageDiv = document.createElement('div');
+      messageDiv.innerHTML = message;
+      messageDiv.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#10B981' : '#3B82F6'};
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        font-family: var(--font-primary);
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 1000;
+        animation: slideInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+      `;
+      
+      // Click to dismiss
+      messageDiv.addEventListener('click', () => {
+        messageDiv.style.animation = 'slideOutScale 0.3s ease-in';
+        setTimeout(() => messageDiv.remove(), 300);
+      });
+      
+      document.body.appendChild(messageDiv);
+      
+      setTimeout(() => {
+        if (messageDiv.parentNode) {
+          messageDiv.style.animation = 'slideOutScale 0.3s ease-in';
+          setTimeout(() => messageDiv.remove(), 300);
+        }
+      }, 4000);
+    }
+    
+    // Add dynamic styling for animations
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes confettiExplode {
+        0% {
+          transform: translate(0, 0) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(
+            calc(cos(var(--angle)) * var(--velocity)),
+            calc(sin(var(--angle)) * var(--velocity) + 100px)
+          ) scale(0);
+          opacity: 0;
+        }
+      }
+      
+      @keyframes slideInScale {
+        0% {
+          transform: translateX(100%) scale(0.8);
+          opacity: 0;
+        }
+        60% {
+          transform: translateX(-10px) scale(1.05);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(0) scale(1);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes slideOutScale {
+        0% {
+          transform: translateX(0) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(100%) scale(0.8);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  });
+</script>
+
+<style>
+  /* Brand variables imported from global layout */
+  :root {
+    --border-light: #E5E5E5;
+  }
+
+  /* Page uses global brand-container class */
+
+  @media (min-width: 768px) {
+    .page-container {
+      padding: 0 48px;
+    }
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 64px 0 48px;
+    text-align: left;
+  }
+
+  .hero-main-title {
+    font-family: var(--font-primary);
+    font-size: var(--text-headline-large-size);
+    font-weight: 400;
+    line-height: var(--text-headline-large-line-height);
+    letter-spacing: var(--text-headline-large-letter-spacing);
+    color: var(--primary-black);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero-subtitle-heading {
+    font-family: var(--font-primary);
+    font-size: var(--text-headline-medium-size);
+    font-weight: 400;
+    line-height: var(--text-headline-medium-line-height);
+    letter-spacing: var(--text-headline-medium-letter-spacing);
+    color: var(--primary-black);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-primary);
+    font-size: var(--text-body-size);
+    font-weight: 400;
+    line-height: var(--text-body-line-height);
+    letter-spacing: var(--text-body-letter-spacing);
+    color: var(--primary-gray);
+    max-width: 600px;
+  }
+
+  /* Projects Grid */
+  .projects-section {
+    margin-top: 48px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Project Cards */
+  .project-card {
+    background: var(--background-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .project-card:hover {
+    border-color: var(--brand-orange);
+    box-shadow: 0 8px 24px rgba(246, 103, 0, 0.15);
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .project-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-card:focus-within {
+    outline: 2px solid var(--brand-orange);
+    outline-offset: 2px;
+  }
+
+  .project-category {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--brand-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+
+  .project-title {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--primary-black);
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .project-description {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--primary-gray);
+    flex-grow: 1;
+    margin-bottom: 20px;
+  }
+
+  .project-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .project-meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--light-gray);
+  }
+
+  /* Apply Button */
+  .btn-apply {
+    background: var(--brand-orange);
+    color: var(--background-white);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-family: var(--font-mono);
+    font-size: var(--text-ui-label-size);
+    font-weight: 400;
+    letter-spacing: var(--text-ui-label-letter-spacing);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+  }
+
+  .btn-apply:hover {
+    background: #E55A00;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(246, 103, 0, 0.3);
+  }
+
+  /* Magical apply button enhancements */
+  .magical-apply-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .magical-apply-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .magical-apply-btn:hover::before {
+    left: 100%;
+  }
+
+  .magical-apply-btn:active {
+    animation: applyPress 0.15s ease-out;
+  }
+
+  @keyframes applyPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+
+  .btn-apply:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(246, 103, 0, 0.2);
+  }
+
+  .btn-apply:focus {
+    outline: 2px solid var(--brand-orange);
+    outline-offset: 2px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 767px) {
+
+    .hero-section {
+      padding: 48px 0 32px;
+    }
+
+    .hero-main-title {
+      font-size: 32px;
+      line-height: 1.3;
+    }
+
+    .hero-subtitle-heading {
+      font-size: 24px;
+      line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+      font-size: 16px;
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .project-card {
+      padding: 20px;
+    }
+  }
+
+  /* Tablet Responsive */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .hero-section {
+      padding: 48px 0 40px;
+    }
+  }
+
+  /* Desktop Optimization */
+  @media (min-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    
+    .hero-section {
+      padding: 64px 0 48px;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-4px);
+    }
+  }
+
+
+  /* Success state for applications */
+  .project-card.applied {
+    border-color: #10B981;
+    background: linear-gradient(135deg, #F0FDF4, #ECFDF5);
+  }
+
+  .project-card.applied .btn-apply {
+    background: #10B981;
+    color: white;
+  }
+
+  /* Accessibility - Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .project-card {
+      transition: none;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-2px);
+    }
+    
+    .btn-apply {
+      transition: none;
+    }
+    
+    .btn-apply:hover {
+      transform: none;
+    }
+  }
+</style>

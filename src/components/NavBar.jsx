@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react'
-import { Popover } from '@headlessui/react'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import clsx from 'clsx'
 
 const sections = [
-  { id: '/', title: 'Discover.', icon: '🏠' },
-  { id: '/use.html', title: 'Use.', icon: '👤' },
-  { id: '/build.html', title: 'Build.', icon: '</>' },
-  { id: '/funding.html', title: 'Get Funded.', icon: '$' },
+  { id: '/use/', title: 'use', icon: '👤' },
+  { id: '/build/', title: 'build', icon: '</>' },
+  { id: '/discover/', title: 'discover', icon: '🔍' },
+  { id: '/funding/', title: 'get funded', icon: '$' },
 ]
 
 function MenuIcon({ open, ...props }) {
@@ -58,12 +58,12 @@ export function NavBar({ currentPathname }) {
             >
               {!open && (
                 <>
-                  <span className="ml-4 text-base  text-orange underline">
+                  <span className="ml-4 text-base" style={{color: '#F66700'}}>
                     {currentTitle}
                   </span>
                 </>
               )}
-              <Popover.Button
+              <PopoverButton
                 className={clsx(
                   '-mr-1 ml-auto flex h-8 w-8 items-center justify-center',
                   open && 'relative z-10'
@@ -80,11 +80,11 @@ export function NavBar({ currentPathname }) {
                   </>
                 )}
                 <MenuIcon open={open} className="h-6 w-6 stroke-gray-700" />
-              </Popover.Button>
+              </PopoverButton>
             </div>
-            <Popover.Panel className="absolute inset-x-0 top-0 bg-white/95 py-3.5 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/80 [@supports(backdrop-filter:blur(0))]:backdrop-blur">
+            <PopoverPanel className="absolute inset-x-0 top-0 bg-white/95 py-3.5 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/80 [@supports(backdrop-filter:blur(0))]:backdrop-blur">
               {sections.map((section) => (
-                <Popover.Button
+                <PopoverButton
                   key={section.id}
                   className="flex items-center px-4 py-1.5"
                   onClick={() => {
@@ -99,18 +99,17 @@ export function NavBar({ currentPathname }) {
                   }
                 >
                   <span
-                    className={clsx(
-                      'ml-4 text-base  ',
-                      currentPathname === section.id
-                        ? 'text-orange underline'
-                        : 'text-gray-900'
-                    )}
+                    className="ml-4 text-base"
+                    style={{
+                      color: currentPathname === section.id ? '#F66700' : '#A8AFB3',
+                      textDecoration: currentPathname === section.id ? 'underline' : 'none'
+                    }}
                   >
                     {section.title}
                   </span>
-                </Popover.Button>
+                </PopoverButton>
               ))}
-            </Popover.Panel>
+            </PopoverPanel>
             <div className="absolute inset-x-0 bottom-full z-10 h-4 bg-white" />
           </>
         )}
@@ -124,12 +123,24 @@ export function NavBar({ currentPathname }) {
             <li key={section.id} className="flex [counter-increment:section]">
               <a
                 href={`${section.id}`}
-                className={clsx(
-                  'flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)]',
-                  currentPathname === section.id
-                    ? 'border-b-8 border-orange text-orange before:text-orange'
-                    : 'border-transparent before:text-gray-500 hover:bg-gray-50/40 hover:text-orange hover:before:text-orange'
-                )}
+                className="flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)] transition-colors duration-200"
+                style={{
+                  borderBottomWidth: currentPathname === section.id ? '8px' : '2px',
+                  borderBottomColor: currentPathname === section.id ? '#F66700' : 'transparent',
+                  color: currentPathname === section.id ? '#F66700' : '#A8AFB3',
+                }}
+                onMouseEnter={(e) => {
+                  if (currentPathname !== section.id) {
+                    e.target.style.color = '#F66700';
+                    e.target.style.backgroundColor = 'rgba(249, 250, 251, 0.4)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (currentPathname !== section.id) {
+                    e.target.style.color = '#A8AFB3';
+                    e.target.style.backgroundColor = 'transparent';
+                  }
+                }}
               >
                 {section.title}
               </a>
